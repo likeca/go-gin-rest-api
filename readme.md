@@ -2,6 +2,8 @@
 
 This is a RESTful API built using the **Gin** framework in Go. It demonstrates a complete CRUD (Create, Read, Update, Delete) implementation for a `User` entity. The project follows idiomatic Go practices, uses a clean architecture with **Repositories**, **Services**, and **Handlers (Controllers)**, and includes features like graceful shutdown, environment variable support, structured logging with **Zerolog**, and CORS configuration.
 
+This project is for my Medium article. [Medium](https://medium.com/@godusan)
+
 ---
 
 ## Features
