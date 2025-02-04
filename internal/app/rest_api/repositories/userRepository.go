@@ -12,7 +12,7 @@ type User struct {
 
 func NewUserRepository(db *sql.DB) *User {
 	return &User{
-		BaseSqlRepository: database.BaseSQLRepository[entities.User]{DB: db},
+		BaseSQLRepository: database.BaseSQLRepository[entities.User]{DB: db},
 	}
 }
 

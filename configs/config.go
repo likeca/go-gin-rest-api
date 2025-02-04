@@ -20,10 +20,6 @@ type serverConfig struct {
 }
 
 type databaseConfig struct {
-	Username       string
-	Password       string
-	Host           string
-	DatabaseName   string
 	DatabaseDriver string
 	DatabaseSource string
 }
@@ -40,10 +36,6 @@ func NewConfig() *Config {
 			Address: GetEnvOrPanic(constants.EnvKeys.ServerAddress),
 		},
 		Database: databaseConfig{
-			Username:       GetEnvOrPanic(constants.EnvKeys.DatabaseUsername),
-			Password:       GetEnvOrPanic(constants.EnvKeys.DatabasePassword),
-			Host:           GetEnvOrPanic(constants.EnvKeys.DatabaseHost),
-			DatabaseName:   GetEnvOrPanic(constants.EnvKeys.DatabaseName),
 			DatabaseDriver: GetEnvOrPanic(constants.EnvKeys.DBDriver),
 			DatabaseSource: GetEnvOrPanic(constants.EnvKeys.DBSource),
 		},
