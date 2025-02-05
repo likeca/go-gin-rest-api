@@ -3,7 +3,6 @@ package services
 import (
 	"database/sql"
 	"errors"
-	"github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/entities"
 	"github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/models"
 	"github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/models/dtos"
 	"github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/repositories"
@@ -29,13 +28,15 @@ func (us *User) GetAllUsers() (*dtos.GetAllUsersResponse, *models.ErrorResponse)
 		}
 	}
 
-	response.MapUserResponse(queriedUsers)
+	response.MapUsersResponse(queriedUsers)
 
 	return response, nil
 }
 
-func (us *User) GetUser(userId int) (*entities.User, *models.ErrorResponse) {
-	user, err := us.userRepo.FindById(userId)
+func (us *User) GetUser(userID int) (*dtos.UserResponse, *models.ErrorResponse) {
+	response := &dtos.UserResponse{}
+
+	user, err := us.userRepo.FindById(userID)
 
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
@@ -50,7 +51,9 @@ func (us *User) GetUser(userId int) (*entities.User, *models.ErrorResponse) {
 		}
 	}
 
-	return user, nil
+	response.MapUserResponse(user)
+
+	return response, nil
 }
 
 func (us *User) DeleteUser(userId int) *models.ErrorResponse {
@@ -66,9 +69,7 @@ func (us *User) DeleteUser(userId int) *models.ErrorResponse {
 			Code:    http.StatusInternalServerError,
 			Message: "Internal Server Error",
 		}
-
 	}
-
 	err = us.userRepo.DeleteUser(user.ID)
 	if err != nil {
 		return &models.ErrorResponse{
@@ -83,7 +84,7 @@ func (us *User) DeleteUser(userId int) *models.ErrorResponse {
 func (us *User) CreateUser(createUserRequest *dtos.CreateUserRequest) (*dtos.CreateUserResponse, *models.ErrorResponse) {
 	userResponse := &dtos.CreateUserResponse{}
 
-	errEmail := us.checkEmailExists(createUserRequest.Email)
+	errEmail := us.checkIfEmailExists(createUserRequest.Email)
 	if errEmail != nil {
 		return nil, errEmail
 	}
@@ -101,8 +102,8 @@ func (us *User) CreateUser(createUserRequest *dtos.CreateUserRequest) (*dtos.Cre
 	return userResponse.FromUser(user), nil
 }
 
-func (us *User) UpdateUser(userId int, updateUserRequest *dtos.UpdateUserRequest) *models.ErrorResponse {
-	existingUser, err := us.userRepo.FindById(userId)
+func (us *User) UpdateUser(userID int, updateUserRequest *dtos.UpdateUserRequest) *models.ErrorResponse {
+	existingUser, err := us.userRepo.FindById(userID)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return &models.ErrorResponse{
@@ -117,14 +118,14 @@ func (us *User) UpdateUser(userId int, updateUserRequest *dtos.UpdateUserRequest
 	}
 
 	if updateUserRequest.Email != existingUser.Email {
-		errEmail := us.checkEmailExists(updateUserRequest.Email)
+		errEmail := us.checkIfEmailExists(updateUserRequest.Email)
 		if errEmail != nil {
 			return errEmail
 		}
 	}
 
 	existingUser = updateUserRequest.ToUser()
-	existingUser.ID = userId
+	existingUser.ID = userID
 
 	err = us.userRepo.Update(existingUser)
 
@@ -138,7 +139,7 @@ func (us *User) UpdateUser(userId int, updateUserRequest *dtos.UpdateUserRequest
 	return nil
 }
 
-func (us *User) checkEmailExists(email string) *models.ErrorResponse {
+func (us *User) checkIfEmailExists(email string) *models.ErrorResponse {
 	userWithEmail, err := us.userRepo.FindByEmail(email)
 	if err != nil && !errors.Is(err, sql.ErrNoRows) {
 		return &models.ErrorResponse{

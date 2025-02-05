@@ -34,7 +34,7 @@ type CreateUserResponse struct {
 	Message   string `json:"message" binding:"required"`
 }
 
-func (r *GetAllUsersResponse) MapUserResponse(users []*entities.User) {
+func (r *GetAllUsersResponse) MapUsersResponse(users []*entities.User) {
 	for _, users := range users {
 		user := &UserResponse{
 			FirstName:   users.FirstName,
@@ -44,6 +44,13 @@ func (r *GetAllUsersResponse) MapUserResponse(users []*entities.User) {
 		}
 		r.Users = append(r.Users, user)
 	}
+}
+
+func (r *UserResponse) MapUserResponse(user *entities.User) {
+	r.FirstName = user.FirstName
+	r.LastName = user.LastName
+	r.Email = user.Email
+	r.PhoneNumber = user.PhoneNumber
 }
 
 func (ur *CreateUserRequest) ToUser() *entities.User {

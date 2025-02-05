@@ -46,7 +46,7 @@ func main() {
 	userService := services.NewUserService(userRepo)
 
 	// Pass services to handlers
-	userHandler := handlers.NewUserHandlers(userService)
+	userHandler := handlers.NewUserHandler(userService)
 
 	cors := config.CorsNew()
 

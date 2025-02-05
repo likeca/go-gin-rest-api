@@ -49,7 +49,7 @@ func (r *User) GetAllUsers() ([]*entities.User, error) {
 
 func (r *User) Create(user *entities.User) error {
 	_, err := r.Insert(
-		"INSERT INTO users (first_name, last_name, email, phone_number) VALUES ($1, $2, $3, $4, $5, $6)",
+		"INSERT INTO users (first_name, last_name, email, phone_number) VALUES ($1, $2, $3, $4)",
 		user.FirstName, user.LastName, user.Email, user.PhoneNumber,
 	)
 
