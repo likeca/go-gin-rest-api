@@ -1,4 +1,4 @@
-module github.com/likeca/gin-rest-tutorial
+module github.com/likeca/go-gin-rest-api
 
 go 1.23.4
 

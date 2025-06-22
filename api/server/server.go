@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"github.com/gin-gonic/gin"
-	"github.com/likeca/gin-rest-tutorial/configs"
+	"github.com/likeca/go-gin-rest-api/configs"
 	"github.com/rs/zerolog"
 	"net/http"
 	"os"

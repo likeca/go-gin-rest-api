@@ -5,7 +5,7 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"github.com/likeca/gin-rest-tutorial/internal/app/rest_api/constants"
+	"github.com/likeca/go-gin-rest-api/internal/app/rest_api/constants"
 	"net/http"
 	"os"
 )

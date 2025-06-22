@@ -30,8 +30,8 @@ Before running the project, ensure you have the following installed:
 ## Setup
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/gin-rest-tutorial.git
-cd gin-rest-tutorial
+git clone https://github.com/your-username/go-gin-rest-api.git
+cd go-gin-rest-api
 ```
 
 ### 2. Set Up Environment Variables
