@@ -1,5 +1,6 @@
 # Gin REST API Tutorial
-[Building a RESTful API in Go Using the Gin Framework Tutorial](https://medium.com/@godusan/building-a-restful-api-in-go-using-the-gin-framework-a-step-by-step-tutorial-part-1-2-70372ebfa988)
+[Building a RESTful API in Go Using the Gin Framework Tutorial - Part 1](https://medium.com/@godusan/building-a-restful-api-in-go-using-the-gin-framework-a-step-by-step-tutorial-part-1-2-70372ebfa988)  
+[Building a RESTful API in Go Using the Gin Framework Tutorial - Prat 2](https://medium.com/@godusan/building-a-restful-api-in-go-using-the-gin-framework-a-step-by-step-tutorial-part-2-2-893fc2e063d2)
 
 This is a RESTful API built using the **Gin** framework in Go. It demonstrates a complete CRUD (Create, Read, Update, Delete) implementation for a `User` entity. The project follows idiomatic Go practices, uses a clean architecture with **Repositories**, **Services**, and **Handlers (Controllers)**, and includes features like graceful shutdown, environment variable support, structured logging with **Zerolog**, and CORS configuration.
 
@@ -74,5 +75,8 @@ VALUES
 ### 5. Run the Application
 Start the application using the following command:
 ```bash
-go run main.go
+# Go update all modules
+go get -u ./...
+
+go run cmd/rest_api/main.go
 ```

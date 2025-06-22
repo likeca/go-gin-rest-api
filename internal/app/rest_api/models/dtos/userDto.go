@@ -1,6 +1,6 @@
 package dtos
 
-import "github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/entities"
+import "github.com/likeca/gin-rest-tutorial/internal/app/rest_api/entities"
 
 type UserResponse struct {
 	FirstName   string `json:"first_name"`

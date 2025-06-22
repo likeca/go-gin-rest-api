@@ -3,9 +3,9 @@ package services
 import (
 	"database/sql"
 	"errors"
-	"github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/models"
-	"github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/models/dtos"
-	"github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/repositories"
+	"github.com/likeca/gin-rest-tutorial/internal/app/rest_api/models"
+	"github.com/likeca/gin-rest-tutorial/internal/app/rest_api/models/dtos"
+	"github.com/likeca/gin-rest-tutorial/internal/app/rest_api/repositories"
 	"net/http"
 )
 

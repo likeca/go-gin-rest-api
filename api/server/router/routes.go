@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/handlers"
+	"github.com/likeca/gin-rest-tutorial/internal/app/rest_api/handlers"
 )
 
 func RegisterPublicEndpoints(router *gin.Engine, userHandlers *handlers.User) {

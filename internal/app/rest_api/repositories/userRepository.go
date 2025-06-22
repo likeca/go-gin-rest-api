@@ -2,8 +2,8 @@ package repositories
 
 import (
 	"database/sql"
-	"github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/database"
-	"github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/entities"
+	"github.com/likeca/gin-rest-tutorial/internal/app/rest_api/database"
+	"github.com/likeca/gin-rest-tutorial/internal/app/rest_api/entities"
 )
 
 type User struct {

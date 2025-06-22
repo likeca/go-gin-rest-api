@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/models/dtos"
-	"github.com/notoriouscode97/gin-rest-tutorial/internal/app/rest_api/services"
+	"github.com/likeca/gin-rest-tutorial/internal/app/rest_api/models/dtos"
+	"github.com/likeca/gin-rest-tutorial/internal/app/rest_api/services"
 	"net/http"
 	"strconv"
 )

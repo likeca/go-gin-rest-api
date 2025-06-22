@@ -1,7 +1,7 @@
-CREATE TABLE users (
-                       id SERIAL PRIMARY KEY,
-                       first_name VARCHAR(100) NOT NULL,
-                       last_name VARCHAR(100) NOT NULL,
-                       email VARCHAR(255) UNIQUE NOT NULL,
-                       phone_number VARCHAR(20)
+create table users (
+   id           serial primary key,
+   first_name   varchar(100) not null,
+   last_name    varchar(100) not null,
+   email        varchar(255) unique not null,
+   phone_number varchar(20)
 );
