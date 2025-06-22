@@ -78,5 +78,8 @@ Start the application using the following command:
 # Go update all modules
 go get -u ./...
 
+# Switch to "release" mode in production.
+export GIN_MODE=release
+
 go run cmd/rest_api/main.go
 ```
