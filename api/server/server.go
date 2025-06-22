@@ -3,14 +3,14 @@ package serve
 import (
 	"context"
 	"errors"
-	"github.com/gin-gonic/gin"
-	"github.com/likeca/go-gin-rest-api/configs"
-	"github.com/rs/zerolog"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+	"github.com/gin-gonic/gin"
+	"github.com/rs/zerolog"
+	"go-gin-rest-api/configs"
 )
 
 type Server struct {

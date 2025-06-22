@@ -1,17 +1,17 @@
 package main
 
 import (
+	"time"
 	"github.com/gin-gonic/gin"
-	serve "github.com/likeca/go-gin-rest-api/api/server"
-	routes "github.com/likeca/go-gin-rest-api/api/server/router"
-	"github.com/likeca/go-gin-rest-api/configs"
-	"github.com/likeca/go-gin-rest-api/internal/app/rest_api/database"
-	"github.com/likeca/go-gin-rest-api/internal/app/rest_api/handlers"
-	"github.com/likeca/go-gin-rest-api/internal/app/rest_api/repositories"
-	"github.com/likeca/go-gin-rest-api/internal/app/rest_api/services"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"time"
+	serve "go-gin-rest-api/api/server"
+	routes "go-gin-rest-api/api/server/router"
+	"go-gin-rest-api/configs"
+	"go-gin-rest-api/internal/app/rest_api/database"
+	"go-gin-rest-api/internal/app/rest_api/handlers"
+	"go-gin-rest-api/internal/app/rest_api/repositories"
+	"go-gin-rest-api/internal/app/rest_api/services"
 )
 
 func main() {

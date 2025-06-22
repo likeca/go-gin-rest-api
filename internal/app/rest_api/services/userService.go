@@ -3,10 +3,10 @@ package services
 import (
 	"database/sql"
 	"errors"
-	"github.com/likeca/go-gin-rest-api/internal/app/rest_api/models"
-	"github.com/likeca/go-gin-rest-api/internal/app/rest_api/models/dtos"
-	"github.com/likeca/go-gin-rest-api/internal/app/rest_api/repositories"
 	"net/http"
+	"go-gin-rest-api/internal/app/rest_api/models"
+	"go-gin-rest-api/internal/app/rest_api/models/dtos"
+	"go-gin-rest-api/internal/app/rest_api/repositories"
 )
 
 type User struct {

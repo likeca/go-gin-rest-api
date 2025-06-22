@@ -3,12 +3,12 @@ package handlers
 import (
 	"errors"
 	"fmt"
-	"github.com/gin-gonic/gin"
-	"github.com/go-playground/validator/v10"
-	"github.com/likeca/go-gin-rest-api/internal/app/rest_api/models/dtos"
-	"github.com/likeca/go-gin-rest-api/internal/app/rest_api/services"
 	"net/http"
 	"strconv"
+	"github.com/gin-gonic/gin"
+	"github.com/go-playground/validator/v10"
+	"go-gin-rest-api/internal/app/rest_api/models/dtos"
+	"go-gin-rest-api/internal/app/rest_api/services"
 )
 
 type User struct {
